@@ -1,4 +1,4 @@
-import { BigInt,Bytes } from "@graphprotocol/graph-ts"
+import { Address, BigInt,Bytes } from "@graphprotocol/graph-ts"
 import {
   ClaimSuccess as ClaimSuccessEvent,
   CreationSuccess as CreationSuccessEvent,
@@ -8,8 +8,10 @@ import {
   Claim,
   Redpacket,
   Refund,
-  Lastupdate
+  Lastupdate,
+  Token
 } from "../generated/schema"
+import { ERC20 } from '../generated/HappyRedPacket/ERC20'
 
 const ONE = "1"
 
@@ -90,6 +92,32 @@ export function handleCreationSuccess(event: CreationSuccessEvent): void {
   redpacket.expireTimestamp = event.params.creation_time.plus(event.params.duration)
   redpacket.refunded = false
   redpacket.allClaimed = false
+
+  const tokenId = event.params.token_address.toString();
+
+  let token = Token.load(tokenId);
+  if (!token) {
+    token = new Token(tokenId);
+    const erc20 = ERC20.bind(Address.fromBytes(event.params.token_address));
+
+    token.address = event.params.token_address;
+
+    const nameResult = erc20.try_name()
+    if (!nameResult.reverted) {
+      token.name = nameResult.value.toString()
+    }
+    const symbolResult = erc20.try_symbol()
+    if (!symbolResult.reverted) {
+      token.symbol = symbolResult.value.toString()
+    }
+    const decimalsResult = erc20.try_decimals()
+    if (!decimalsResult.reverted) {
+      token.decimals = BigInt.fromI32(decimalsResult.value)
+    }
+
+    token.save();
+  }
+  redpacket.token = tokenId;
 
   redpacket.save()
 }
