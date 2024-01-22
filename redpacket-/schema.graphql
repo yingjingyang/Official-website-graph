@@ -21,6 +21,7 @@ type Redpacket @entity {
   creator: Bytes! # address
   creationTime: BigInt! # uint256
   tokenAddress: Bytes! # address
+  token: Token!
   number: BigInt! # uint256
   remainToClaim: BigInt! # uint256
   ifrandom: Boolean! # bool
@@ -48,4 +49,12 @@ type Refund @entity {
 type Lastupdate @entity {
   id: ID!
   lastupdateTimestamp: BigInt!
+}
+
+type Token @entity {
+  id: ID! # address
+  address: Bytes!
+  symbol: String!
+  name: String!
+  decimals: BigInt!
 }

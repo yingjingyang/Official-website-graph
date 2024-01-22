@@ -20,6 +20,8 @@ dataSources:
       abis:
         - name: HappyRedPacket
           file: ./abis/HappyRedPacket.json
+        - name: ERC20
+          file: ./abis/ERC20.json
       eventHandlers:
         - event: ClaimSuccess(uint32,address,uint256,address)
           handler: handleClaimSuccess
