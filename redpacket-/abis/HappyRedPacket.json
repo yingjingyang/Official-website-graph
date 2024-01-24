@@ -25,6 +25,12 @@
         "internalType": "address",
         "name": "token_address",
         "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "lock",
+        "type": "bytes32"
       }
     ],
     "name": "ClaimSuccess",
@@ -123,6 +129,12 @@
         "internalType": "uint256",
         "name": "remaining_balance",
         "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "lock",
+        "type": "bytes32"
       }
     ],
     "name": "RefundSuccess",
@@ -183,6 +195,30 @@
         "internalType": "bytes32[]",
         "name": "proof",
         "type": "bytes32[]"
+      }
+    ],
+    "name": "claim",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "claimed",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_id",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32[]",
+        "name": "proof",
+        "type": "bytes32[]"
       },
       {
         "internalType": "uint256[2]",
@@ -200,7 +236,7 @@
         "type": "uint256[2]"
       }
     ],
-    "name": "claim",
+    "name": "claimPasswordRedpacket",
     "outputs": [
       {
         "internalType": "uint256",
