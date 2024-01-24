@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: HappyRedPacket
-    network: sepolia
+    network: optimism
     source:
-      address: "0x38CCD6Cd7A9746cAcdB984c05f6430187F5d5A93"
+      address: "0x58fc734C073DCBCDa79d5B4d32c89919e696aF53"
       abi: HappyRedPacket
-      startBlock: 5115044
+      startBlock: 115247828
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -20,11 +20,13 @@ dataSources:
       abis:
         - name: HappyRedPacket
           file: ./abis/HappyRedPacket.json
+        - name: ERC20
+          file: ./abis/ERC20.json
       eventHandlers:
-        - event: ClaimSuccess(uint32,address,uint256,address)
+        - event: ClaimSuccess(bytes32,address,uint256,address)
           handler: handleClaimSuccess
-        - event: CreationSuccess(uint32,uint256,string,string,address,uint256,address,uint256,bool,uint256)
+        - event: CreationSuccess(uint256,bytes32,string,string,address,uint256,address,uint256,bool,uint256,bytes32)
           handler: handleCreationSuccess
-        - event: RefundSuccess(uint32,address,uint256)
+        - event: RefundSuccess(bytes32,address,uint256)
           handler: handleRefundSuccess
       file: ./src/happy-red-packet.ts
