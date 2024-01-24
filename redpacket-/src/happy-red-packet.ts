@@ -26,6 +26,7 @@ export function handleClaimSuccess(event: ClaimSuccessEvent): void {
   claim.claimer = event.params.claimer
   claim.claimedValue = event.params.claimed_value
   claim.tokenAddress = event.params.token_address
+  claim.lock = event.params.lock
 
   claim.blockNumber = event.block.number
   claim.blockTimestamp = event.block.timestamp
@@ -131,6 +132,7 @@ export function handleRefundSuccess(event: RefundSuccessEvent): void {
   entity.happyRedPacketId = event.params.id
   entity.tokenAddress = event.params.token_address
   entity.remainingBalance = event.params.remaining_balance
+  entity.lock = event.params.lock
 
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp

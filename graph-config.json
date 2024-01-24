@@ -1,10 +1,10 @@
 {"sepolia-redpacket":{
-    "redpacket-address": "0x38CCD6Cd7A9746cAcdB984c05f6430187F5d5A93",
+    "redpacket-address": "0x8C703497369F9D5f2A40Ed1461578c2239678825",
     "graphURl-latestVersion":  "https://api.studio.thegraph.com/query/55957/redpacket-/version/latest",
     "graphURl-currentVersion": "https://api.studio.thegraph.com/query/55957/redpacket-/v0.0.12"
 },
 "Optimism-redpacket":{
-    "redpacket-address": "0xf92Bd7Aec95e3bA47D35F9CB5Fb376fa9bd9995a",
+    "redpacket-address": "0x0C56c2f6D36Df8648b7B20a99357790197B2b116",
     "graphURl-latestVersion":  "https://api.studio.thegraph.com/query/55957/dapp-learning-redpacket/version/latest",
     "graphURl-currentVersion": "https://api.studio.thegraph.com/query/55957/dapp-learning-redpacket/v0.0.11"
 },

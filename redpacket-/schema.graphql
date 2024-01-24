@@ -4,6 +4,7 @@ type Claim @entity {
   claimer: Bytes! # address
   claimedValue: BigInt! # uint256
   tokenAddress: Bytes! # address
+  lock: Bytes!
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
@@ -39,6 +40,7 @@ type Refund @entity {
   happyRedPacketId: Bytes! # bytes32
   tokenAddress: Bytes! # address
   remainingBalance: BigInt! # uint256
+  lock: Bytes!
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
