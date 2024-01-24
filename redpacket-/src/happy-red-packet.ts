@@ -22,9 +22,8 @@ export function handleClaimSuccess(event: ClaimSuccessEvent): void {
     claimID
   )
   let packetId = event.params.id.toString()
-  claim.happyRedPacketId = packetId
+  claim.happyRedPacketId = event.params.id
   claim.claimer = event.params.claimer
-  claim.nonce = event.params.id
   claim.claimedValue = event.params.claimed_value
   claim.tokenAddress = event.params.token_address
 
@@ -74,8 +73,7 @@ export function handleCreationSuccess(event: CreationSuccessEvent): void {
   lastupdate.save()
 
   redpacket.total = event.params.total
-  redpacket.happyRedPacketId = packetId
-  redpacket.nonce = event.params.id
+  redpacket.happyRedPacketId = event.params.id
   redpacket.name = event.params.name
   redpacket.message = event.params.message
   redpacket.creator = event.params.creator
@@ -85,6 +83,7 @@ export function handleCreationSuccess(event: CreationSuccessEvent): void {
   redpacket.remainToClaim = event.params.number
   redpacket.ifrandom = event.params.ifrandom
   redpacket.duration = event.params.duration
+  redpacket.lock = event.params.lock
 
   redpacket.blockNumber = event.block.number
   redpacket.blockTimestamp = event.block.timestamp
@@ -129,8 +128,7 @@ export function handleRefundSuccess(event: RefundSuccessEvent): void {
     refundID
   )
   let packetId = event.params.id.toString()
-  entity.happyRedPacketId = packetId
-  entity.nonce = event.params.id
+  entity.happyRedPacketId = event.params.id
   entity.tokenAddress = event.params.token_address
   entity.remainingBalance = event.params.remaining_balance
 

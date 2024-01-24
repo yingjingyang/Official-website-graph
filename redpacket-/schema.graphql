@@ -1,7 +1,6 @@
 type Claim @entity {
   id: ID!
-  happyRedPacketId: String! # bytes32
-  nonce: BigInt! # bytes32
+  happyRedPacketId: Bytes! # bytes32
   claimer: Bytes! # address
   claimedValue: BigInt! # uint256
   tokenAddress: Bytes! # address
@@ -14,8 +13,7 @@ type Claim @entity {
 type Redpacket @entity {
   id: ID!
   total: BigInt! # uint256
-  happyRedPacketId: String! # bytes32
-  nonce: BigInt! # uint256
+  happyRedPacketId: Bytes! # bytes32
   name: String! # string
   message: String! # string
   creator: Bytes! # address
@@ -26,6 +24,7 @@ type Redpacket @entity {
   remainToClaim: BigInt! # uint256
   ifrandom: Boolean! # bool
   duration: BigInt! # uint256
+  lock: Bytes!
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
@@ -37,8 +36,7 @@ type Redpacket @entity {
 
 type Refund @entity {
   id: ID!
-  happyRedPacketId: String! # bytes32
-  nonce: BigInt! # uint256
+  happyRedPacketId: Bytes! # bytes32
   tokenAddress: Bytes! # address
   remainingBalance: BigInt! # uint256
   blockNumber: BigInt!
