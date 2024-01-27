@@ -1,12 +1,14 @@
 {"sepolia-redpacket":{
-    "redpacket-address": "0x8C703497369F9D5f2A40Ed1461578c2239678825",
-    "graphURl-latestVersion":  "https://api.studio.thegraph.com/query/55957/redpacket-/version/latest",
-    "graphURl-currentVersion": "https://api.studio.thegraph.com/query/55957/redpacket-/v0.0.12"
+    "redpacket-address": "0x7aee9933802d9E150e8FdEDc5a022a6d386BB44d",
+    "graphURl-latestVersion":  "https://api.studio.thegraph.com/query/55957/redpacket-/version/latest"
 },
 "Optimism-redpacket":{
-    "redpacket-address": "0x0C56c2f6D36Df8648b7B20a99357790197B2b116",
-    "graphURl-latestVersion":  "https://api.studio.thegraph.com/query/55957/dapp-learning-redpacket/version/latest",
-    "graphURl-currentVersion": "https://api.studio.thegraph.com/query/55957/dapp-learning-redpacket/v0.0.11"
+    "redpacket-address": "0x62E8cf62Dc0B7d7afF9A1A58CeA14976fDB16a85",
+    "graphURl-latestVersion":  "https://api.studio.thegraph.com/query/55957/dapp-learning-redpacket/version/latest"
+},
+"scroll-redpacket":{
+    "merkleDistributorFactory-address": "0xC90D844679C0eFEB37522c43711D4856d192BD62",
+    "graphURl-latestVersion":  "https://api.studio.thegraph.com/query/55957/scroll-redpacket/version/latest"
 },
 "Optimism-MerkleDistributorFactory":{
     "merkleDistributorFactory-address": "0xBCa06150053F9b933eaddE04D1Fb1C82FD88D09d",
