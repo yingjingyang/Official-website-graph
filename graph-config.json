@@ -7,7 +7,11 @@
     "graphURl-latestVersion":  "https://api.studio.thegraph.com/query/55957/dapp-learning-redpacket/version/latest"
 },
 "scroll-redpacket":{
-    "merkleDistributorFactory-address": "0xC90D844679C0eFEB37522c43711D4856d192BD62",
+    "redpacket-address": "0xC90D844679C0eFEB37522c43711D4856d192BD62",
+    "graphURl-latestVersion":  "https://api.studio.thegraph.com/query/55957/scroll-redpacket/version/latest"
+},
+"arbitrum-redpacket":{
+    "redpacket-address": "0x075FE5D2CD5D22D744Da94d81658143abf49D589",
     "graphURl-latestVersion":  "https://api.studio.thegraph.com/query/55957/scroll-redpacket/version/latest"
 },
 "Optimism-MerkleDistributorFactory":{
