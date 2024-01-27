@@ -1,0 +1,8 @@
+{
+  "optimism": {
+    "MerkleDistributorFactory": {
+      "address": "0x11406d60d1daddcff4ee315cdb23cfc3c990a125",
+      "startBlock": 113870749
+    }
+  }
+}
