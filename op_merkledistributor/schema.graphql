@@ -10,7 +10,7 @@ type Distributor @entity {
   creationTimestamp: BigInt!
   expireTimestamp: BigInt!
   token: Token
-  refunder: [Refund]! @derivedFrom(field: "distributor")
+  refunder: Refund
   claimers: [Claimer]! @derivedFrom(field: "distributor")
   remainToClaim: BigInt! # uint256
   allClaimed: Boolean!
