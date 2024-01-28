@@ -21,7 +21,7 @@ export function handleClaimSuccess(event: ClaimSuccessEvent): void {
   let claim = new Claim(
     claimID
   )
-  let packetId = event.params.id.toString()
+  let packetId = event.params.id.toHexString()
   claim.happyRedPacketId = event.params.id
   claim.claimer = event.params.claimer
   claim.claimedValue = event.params.claimed_value
@@ -58,7 +58,7 @@ export function handleClaimSuccess(event: ClaimSuccessEvent): void {
 }
 
 export function handleCreationSuccess(event: CreationSuccessEvent): void {
-  let packetId = event.params.id.toString()
+  let packetId = event.params.id.toHexString()
   let redpacket = new Redpacket(
     packetId
   )
@@ -128,7 +128,7 @@ export function handleRefundSuccess(event: RefundSuccessEvent): void {
   let entity = new Refund(
     refundID
   )
-  let packetId = event.params.id.toString()
+  let packetId = event.params.id.toHexString()
   entity.happyRedPacketId = event.params.id
   entity.tokenAddress = event.params.token_address
   entity.remainingBalance = event.params.remaining_balance
@@ -145,6 +145,7 @@ export function handleRefundSuccess(event: RefundSuccessEvent): void {
     return
   }
   recdpacket.refunded = true
+  recdpacket.refunder = refundID
   recdpacket.save()
 
   let lastupdate = Lastupdate.load(ONE)

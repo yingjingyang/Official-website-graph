@@ -32,6 +32,7 @@ type Redpacket @entity {
   expireTimestamp: BigInt!
   claimers: [Claim]! @derivedFrom(field: "redpacket")
   refunded: Boolean!
+  refunder: Refund
   allClaimed: Boolean!
 }
 
