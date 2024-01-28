@@ -73,6 +73,7 @@ export function handleRefund(event: RefundEvent): void {
     return
   }
   distributor.refunded = true
+  distributor.refunder = refundID
   distributor.save()
 
 }
