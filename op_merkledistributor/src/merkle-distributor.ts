@@ -7,12 +7,12 @@ const zeroBigInt = BigInt.fromString("0")
 const ONE = "1"
 
 export function handleClaimed(event: ClaimEvent): void {
-  // let lastupdate = Lastupdate.load(ONE)
-  // if (lastupdate === null) {
-  //   return
-  // }
-  // lastupdate.lastupdateTimestamp = event.block.timestamp
-  // lastupdate.save()
+  let lastupdate = Lastupdate.load(ONE)
+  if (lastupdate === null) {
+    return
+  }
+  lastupdate.lastupdateTimestamp = event.block.timestamp
+  lastupdate.save()
 
 
   let claimer = new Claimer(
@@ -60,18 +60,21 @@ export function handleRefund(event: RefundEvent): void {
     refundID
   )
 
+
   refund.distributor = event.address
   refund.to = event.params.to
   refund.amount = event.params.refund_balance
   refund.blockNumber = event.block.number
   refund.blockTimestamp = event.block.timestamp
 
-  refund.save()
-
   let distributor = Distributor.load(event.address)
   if (distributor === null) {
     return
   }
+
+  refund.tokenAddress  = distributor.tokenAddress
+  refund.save()
+
   distributor.refunded = true
   distributor.refunder = refundID
   distributor.save()
