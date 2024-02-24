@@ -4,11 +4,20 @@ schema:
 dataSources:
   - kind: ethereum
     name: MerkleDistributorFactory
-    network: sepolia
+    # network: sepolia
+    network: scroll
+    # network: arbitrum-one
+    # network: optimism
     source:
-      address: "0x694c0d80861d367aC34e64ba05B1468c3bAE0B1D"
+      # address: "0x694c0d80861d367aC34e64ba05B1468c3bAE0B1D" # sepolia
+      address: "0x35eca762d594e734e58Fa2838EAA61A359606289" # scroll
+      # address: "0xF5D3668d94dcF4C2cB7bE81AD43857762695BF78" # arbitrum
+      # address: "0xCaEC4528A60ca2c47123D7946179011F8B7A7b41" # optimism
       abi: MerkleDistributorFactory
-      startBlock: 5164059
+      # startBlock: 5164059 # sepolia
+      startBlock: 3604423 # scroll
+      # startBlock: 184030094 # arbitrum-one
+      # startBlock: 116593736 # optimism
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -27,7 +36,10 @@ dataSources:
 templates:
   - kind: ethereum
     name: MerkleDistributor
-    network: sepolia
+    # network: sepolia
+    network: scroll
+    # network: arbitrum-one
+    # network: optimism
     source:
       abi: MerkleDistributor
     mapping:

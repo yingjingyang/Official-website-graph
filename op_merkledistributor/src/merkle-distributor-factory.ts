@@ -39,6 +39,7 @@ export function handleDistributorCreated(event: DistributorCreatedEvent): void {
   distributor.allClaimed = false
   distributor.refunded = false
   distributor.isETH = false
+  distributor.redpacketId = event.params.id
 
 
   let distributionTokenAddress = event.params.token_address.toHexString()

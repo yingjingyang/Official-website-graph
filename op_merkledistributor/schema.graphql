@@ -16,6 +16,7 @@ type Distributor @entity {
   allClaimed: Boolean!
   refunded: Boolean!
   isETH: Boolean!
+  redpacketId: Bytes!
 }
 
 type Claimer @entity {
