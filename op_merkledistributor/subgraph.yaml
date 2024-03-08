@@ -5,19 +5,22 @@ dataSources:
   - kind: ethereum
     name: MerkleDistributorFactory
     # network: sepolia
-    network: scroll
+    # network: scroll
     # network: arbitrum-one
     # network: optimism
+    network: zksync-era
     source:
-      # address: "0x694c0d80861d367aC34e64ba05B1468c3bAE0B1D" # sepolia
-      address: "0x35eca762d594e734e58Fa2838EAA61A359606289" # scroll
+      # address: "0x4ADE20737690166634a96E1B0524a61051137753" # sepolia
+      # address: "0x35eca762d594e734e58Fa2838EAA61A359606289" # scroll
       # address: "0xF5D3668d94dcF4C2cB7bE81AD43857762695BF78" # arbitrum
       # address: "0xCaEC4528A60ca2c47123D7946179011F8B7A7b41" # optimism
+      address: "0x7a532BD262291EeA040A3D61d7BeB3220ff06687" # zksync-era
       abi: MerkleDistributorFactory
-      # startBlock: 5164059 # sepolia
-      startBlock: 3604423 # scroll
+      # startBlock: 5358709 # sepolia
+      # startBlock: 3604423 # scroll
       # startBlock: 184030094 # arbitrum-one
       # startBlock: 116593736 # optimism
+      startBlock: 28413786 # zksync-era
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -37,9 +40,10 @@ templates:
   - kind: ethereum
     name: MerkleDistributor
     # network: sepolia
-    network: scroll
+    # network: scroll
     # network: arbitrum-one
     # network: optimism
+    network: zksync-era
     source:
       abi: MerkleDistributor
     mapping:
